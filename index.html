@@ -4,83 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">    
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        let computerscore = 0;
-        let playerscore = 0;
-        function computerPlay(){
-            return Math.floor(Math.random() * 3) + 1;
-        }
-        function addScore(x){
-            return x+1;
-        }
-        function playRound(playerSelection, computerSelection){
-            player = playerSelection.toLowerCase();
-            if (player === "rock"){
-                if (computerSelection === 1){
-                    console.log("It's a Tie!!");
-                }
-                else if (computerSelection === 2) {
-                    console.log("You lose!!");
-                    computerscore++;
-                }
-                else {
-                    console.log("You Win!!");
-                    playerscore++;
-                }
-            }
-
-            if (player === "paper"){
-                if (computerSelection === 2){
-                    console.log("It's a Tie!!");
-                }
-                else if (computerSelection === 3) {
-                    console.log("You lose!!");
-                    computerscore++;
-                }
-                else {
-                    console.log("You Win!!");
-                    playerscore++;
-                }
-            }
-
-            if (player === "scissors"){
-                if (computerSelection === 3){
-                    console.log("It's a Tie!!");
-                }
-                else if (computerSelection === 1) {
-                    console.log("You lose!!");
-                    computerscore++;
-                }
-                else {
-                    console.log("You Win!!");
-                    playerscore++;
-                }
-        }
-        return("Player Score: " + playerscore + " | Computer Score :" + computerscore);
-    }
-
-        function game(){
-            for (let i=0; i < 5; i++){
-                console.log("type ROCK, PAPER, or SCISSORS");
-                let ps = prompt();
-                console.log(playRound(ps, computerPlay()));   
-            }
-            if (playerscore > computerscore){
-                    console.log("You won against the computer!");
-                }
-                else if (playerscore < computerscore){
-                    console.log("You lost agians the computer!");
-                }
-                else{
-                    console.log("You ties against the computer!")
-                }
-        }
-
-        game();
-    </script>
+    <div class="Title">
+        ROCK PAPER SCISSORS
+    </div>
+    <div class="scores">
+        <div class="Score">
+            <div class="name">Player</div>
+            <div class="score" id="p">
+                0
+            </div>
+        </div>
+        <div class="Score">
+            <div class="name">Computer</div>
+            <div class="score" id="c">
+                0
+            </div>
+        </div>
+    </div>
+    <div class="Result">First to 5 wins!</div>
+    <div class="Reset">
+        <input type="button" class="rst" value="RESET"></button>
+    </div>
+    <div class="buttons">
+        <button class="button" value="Rock"><img src="./images/rock.png" height="100%" width="100%"></button>
+        <button class="button" value="Paper"><img src="./images/paper.png" height="100%" width="100%"></button>
+        <button class="button" value="Scissors"><img src="./images/scissors.png" height="100%" width="100%"></button>
+    </div>
     
 </body>
 </html>
